@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="draw()">
+<canvas id="sketch" width="700" height="700">
+</canvas>
+<script>
+var sketch = document.getElementById('sketch');
+var context = sketch.getContext("2d");
+function draw() {
+ for (var i = 0; i < 8; i++) {
+    for (var j = 0; j < 8; j++) {
+      if(i%2 == j%2){context.fillStyle = 'rgb(255,255,255)';}else {context.fillStyle = 'rgb(0,0,0)';}
+      context.fillRect(j * 50, i * 50, 50, 50);
+	}
+}
+ for (var x = 0; x < 8; x++) {
+ for (var y = 0; y < 3; y++) {
+if(x%2 == y%2)
+{
+context .fillStyle = 'rgb(0,255,0)';
+context .beginPath();
+context .arc(x * 50+25, y * 50+275, 20, 0, Math.PI * 2, true);
+context.fill();}
+else
+{
+context .fillStyle = 'rgb(0,0,255)';
+context .beginPath();
+context .arc(x * 50+25, y * 50+25, 20, 0, Math.PI * 2, true);
+context.fill();}	
+		}	
+	}
+}
+</script>
+</body>
+</html>
